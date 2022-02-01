@@ -15,7 +15,6 @@ class Migration(migrations.Migration):
             name='Dataset',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('myid', models.IntegerField(verbose_name='myid')),
                 ('serie', models.BigIntegerField(verbose_name='serie')),
                 ('nome', models.CharField(max_length=150, verbose_name='nome')),
                 ('descricao', models.CharField(max_length=255, verbose_name='descrição')),

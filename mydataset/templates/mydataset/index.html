@@ -6,6 +6,24 @@
 </head>
 <body>
 <p>Dataset!!!</p>
-
+<!--<li>Dataset.myid</li>-->
+<div class="row">
+    <div class="col-md-4">
+        <table class="table table-striped table-hover">
+        <thead>
+            <th>id</th>
+            <th>nome</th>
+            <th>descricao</th>
+        </thead>
+        <tbody>
+        {% for item in dataset %}
+           <td><strong>{{ item.id }} </strong></td>
+           <td><strong>{{ item.nome }} </strong></td>
+           <td><strong>{{ item.descricao }} </strong></td>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>
