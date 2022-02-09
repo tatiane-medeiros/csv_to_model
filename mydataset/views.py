@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404
 from django.views import generic
 from mydataset.models import Dataset
 
@@ -8,4 +8,5 @@ from mydataset.models import Dataset
 def index(request):
     # return HttpResponse("Funcionou!!!")
     # template = loader.get_template('index.html')
-    return render(request, 'mydataset/index.html')
+    dataset = Dataset.objects.all()
+    return render(request, 'mydataset/index.html', {'dataset': dataset})

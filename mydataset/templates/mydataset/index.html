@@ -4,22 +4,41 @@
     <meta charset="UTF-8">
     <title>Dataset</title>
 </head>
+<style>
+body { background-color: #fdfff9;}
+table { border: 1px solid black;}
+th {
+  border: 1px solid black;
+  background-color: #e5efe4;
+}
+td {
+  border: 1px solid black;
+  background-color: #f5fff4;
+}
+</style>
 <body>
-<p>Dataset!!!</p>
+<p>Tabela descrevendo os artigos</p>
 <!--<li>Dataset.myid</li>-->
 <div class="row">
     <div class="col-md-4">
-        <table class="table table-striped table-hover">
-        <thead>
+        <table class="table table-striped table-hover" style="width:80%">
+        <thead style="background-color: #ffffff">
             <th>id</th>
+            <th>serie</th>
             <th>nome</th>
             <th>descricao</th>
+            <th>fonte</th>
         </thead>
-        <tbody>
+
+        <tbody style="text-align:center">
         {% for item in dataset %}
+        <tr>
            <td><strong>{{ item.id }} </strong></td>
+           <td><strong>{{ item.serie }} </strong></td>
            <td><strong>{{ item.nome }} </strong></td>
            <td><strong>{{ item.descricao }} </strong></td>
+           <td><strong>{{ item.fonte }} </strong></td>
+        </tr>
         {% endfor %}
         </tbody>
         </table>
