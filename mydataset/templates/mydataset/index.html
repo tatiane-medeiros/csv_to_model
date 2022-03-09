@@ -15,13 +15,16 @@ td {
   border: 1px solid black;
   background-color: #f5fff4;
 }
+.table {
+  width: 80%;
+}
 </style>
 <body>
 <p>Tabela descrevendo os artigos</p>
 <!--<li>Dataset.myid</li>-->
 <div class="row">
     <div class="col-md-4">
-        <table class="table table-striped table-hover" style="width:80%">
+        <table class="table">
         <thead style="background-color: #ffffff">
             <th>id</th>
             <th>serie</th>
@@ -44,5 +47,13 @@ td {
         </table>
     </div>
 </div>
+<p> {% if dataset.has_previous %}
+    <a href="?page={{ dataset.previous_page_number }}"> &laquo; anterior </a>
+    {% endif %}
+    Página {{ dataset.number }} de {{dataset.paginator.num_pages}}
+    {% if dataset.has_next %}
+    <a href="?page={{ dataset.next_page_number }}"> próxima &raquo; </a>
+    {% endif %}
+</p>
 </body>
 </html>
