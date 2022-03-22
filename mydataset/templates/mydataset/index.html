@@ -26,19 +26,17 @@ td {
     <div class="col-md-4">
         <table class="table">
         <thead style="background-color: #ffffff">
-            <th>serie</th>
-            <th>nome</th>
-            <th>descricao</th>
-            <th>fonte</th>
+            {% for label in allFields %}
+            <th>{{ label.name }}</th>
+            {% endfor %}
         </thead>
 
         <tbody style="text-align:center">
         {% for item in dataset %}
         <tr>
-           <td><strong>{{ item.serie }} </strong></td>
-           <td><strong>{{ item.nome }} </strong></td>
-           <td><strong>{{ item.descricao }} </strong></td>
-           <td><strong>{{ item.fonte }} </strong></td>
+            {% for field in item.get_string_fields %}
+            <td><strong>{{ field }} </strong></td>
+            {% endfor %}
         </tr>
         {% endfor %}
         </tbody>

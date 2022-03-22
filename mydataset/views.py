@@ -9,8 +9,8 @@ from mydataset.models import Dataset
 def index(request):
     # return HttpResponse("Funcionou!!!")
     # template = loader.get_template('index.html')
-    # dataset = Dataset.objects.all()
     p = Paginator(Dataset.objects.all(), 8)
     page = request.GET.get('page')
     dataset = p.get_page(page)
-    return render(request, 'mydataset/index.html', {'dataset': dataset})
+    allFields = Dataset._meta.get_fields()
+    return render(request, 'mydataset/index.html', {'dataset': dataset, 'allFields': allFields[1:]})
