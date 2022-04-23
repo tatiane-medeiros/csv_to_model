@@ -1,28 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dataset</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-<style>
-body { background-color: #fdfff9;}
-table { border: 1px solid black;}
-.col-md-4 {
-  max-width: 80%;
-  overflow-x: scroll;
-}
-th {
-  border: 1px solid black;
-  background-color: #e5efe4;
-}
-td {
-  border: 1px solid black;
-  background-color: #f5fff4;
-}
-.table {
-  width: 100%;
-}
-</style>
+
 <body>
 <p>Tabela descrevendo os artigos</p>
 <!--<li>Dataset.myid</li>-->
@@ -35,17 +19,19 @@ td {
             {% endfor %}
         </thead>
 
-        <tbody style="text-align:center">
+        <tbody>
         {% for item in dataset %}
         <tr>
             {% for field in item.get_string_fields %}
-            <td><strong>{{ field }} </strong></td>
+            <td>{{ field }}</td>
             {% endfor %}
         </tr>
         {% endfor %}
         </tbody>
         </table>
+
     </div>
+
 </div>
 <p> {% if dataset.has_previous %}
     <a href="?page={{ dataset.previous_page_number }}"> &laquo; anterior </a>

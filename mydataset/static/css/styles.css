@@ -1,0 +1,29 @@
+body { background-color: #fdfff9;}
+table { border: 1px solid #e5efe4;}
+.row {
+  display: flex;
+}
+.col-md-4 {
+  width: 80%;
+  overflow-x: scroll;
+}
+.check {
+  width: 20%;
+}
+th {
+  background-color: #e5efe4;
+}
+tr {
+  background-color: #f5fff4;
+}
+tr:nth-child(even) {
+  background-color: #e5efe4;
+}
+.table {
+  width: 100%;
+  text-align: center;
+}
+.last-column {
+  width: 100%;
+  text-align: center;
+}
