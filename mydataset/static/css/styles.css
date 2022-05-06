@@ -1,14 +1,7 @@
 body { background-color: #fdfff9;}
-table { border: 1px solid #e5efe4;}
-.row {
-  display: flex;
-}
-.col-md-4 {
-  width: 80%;
-  overflow-x: scroll;
-}
-.check {
-  width: 20%;
+table {
+border: 1px solid #e5efe4;
+overflow-x: scroll;
 }
 th {
   background-color: #e5efe4;
@@ -19,11 +12,12 @@ tr {
 tr:nth-child(even) {
   background-color: #e5efe4;
 }
-.table {
-  width: 100%;
-  text-align: center;
+.d-flex{
+    display: flex !important;
 }
-.last-column {
-  width: 100%;
-  text-align: center;
+#mycontainer {
+   width: 80% !important;
+   overflow-x: scroll;
+}
+.switch {
 }
