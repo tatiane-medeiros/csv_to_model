@@ -1,4 +1,4 @@
-from mydataset.models import Dataset
+from tabela.models import Dataset
 import pandas as pd
 
 def run():

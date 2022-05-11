@@ -2,7 +2,7 @@ from django.urls import path
 
 from . import views
 
-app_name = 'mydataset'
+app_name = 'tabela'
 urlpatterns = [
     path('', views.index, name='index'),
 ]
