@@ -13,8 +13,8 @@
 <body>
 <p>Tabela descrevendo os artigos</p>
 <!--<li>Dataset.myid</li>-->
-<div class="d-flex justify-content-center ">
-    <div class="w-75">
+<div class="row">
+    <div class="col-md-8">
         <div class="table-responsive-sm">
         <table class="table table-sm table-hover" width="100%">
         <thead style="background-color: #ffffff">
@@ -35,15 +35,30 @@
         </table>
     </div>
     </div>
-    <div>
-        <table class="table table-sm ml-1">
-        <thead style="background-color: #ffffff">
-            <th> check </th>
-        </thead>
+    <div class="col-md-3">
+        <table class="table table-hover table-sm ml-1">
+            <thead>
+                <th> Saída </th>
+            </thead>
             <tbody>
             {% for item in dataset %}
             <tr>
-               <td>
+               <td class="align-middle">
+               </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <table id="check-table" class="table table-bordered table-sm ml-1">
+            <thead>
+                <th> Verificação </th>
+            </thead>
+            <tbody>
+            {% for item in dataset %}
+            <tr>
+               <td class="align-middle">
                     <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                     <label class="form-check-label" for="flexSwitchCheckDefault"></label>
