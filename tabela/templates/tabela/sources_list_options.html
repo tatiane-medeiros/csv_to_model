@@ -1,0 +1,6 @@
+<select>
+<option value="">selecione</option>
+{% for source in sources %}
+<option value="{{ source.pk }}">{{ source.tipo }}</option>
+{% endfor %}
+</select>

@@ -1,14 +1,26 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from django.views import generic
 from django.core.paginator import Paginator
-from tabela.models import Dataset
+from tabela.models import Dataset, Source
+from tabela.forms import datasetForm
 
 # Create your views here.
 
+def update_option(request, pk):
+    my_instance = get_object_or_404(Dataset, pk=pk)
+    form = datasetForm(instance=my_instance)
+    if request.method == 'POST':
+        form = datasetForm(request.POST, instance=my_instance)
+        #if form.is_valid():
+        form.save()
+    return render(request, 'tabela/update.html', {'form': form})
+
+def load_sources(request):
+    sources = Source.objects.all()
+    return render(request, 'tabela/source_list_options.html', {'sources': sources})
+
 def index(request):
-    # return HttpResponse("Funcionou!!!")
-    # template = loader.get_template('index.html')
     p = Paginator(Dataset.objects.all(), 8)
     page = request.GET.get('page')
     dataset = p.get_page(page)
