@@ -11,3 +11,4 @@ class datasetForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['tipofonte'].queryset = Source.objects.all()
+        self.fields['tipofonte'].label = False

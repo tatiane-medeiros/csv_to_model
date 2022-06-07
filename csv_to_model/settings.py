@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 ROOT_URLCONF = 'csv_to_model.urls'
 
 TEMPLATES = [

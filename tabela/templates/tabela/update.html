@@ -1,6 +1,6 @@
 {% load static %}
-<html>
-               <form method="post" id="tipoForm" data-sources-url="tabela/ajax/load-sources" onChange="">
+<div style="height: 30px; width: 100px;">
+               <form method="post" id="tipoForm" data-sources-url="tabela/ajax/load-sources">
                     {% csrf_token %}
                     {{ form.as_p }}
 <!--                   <input type="submit" value="Submit">-->
@@ -8,4 +8,4 @@
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
                 <script src="{% static 'js/form-control.js' %}">
                 </script>
- </html>
+ </div>
