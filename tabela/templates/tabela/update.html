@@ -1,11 +1,23 @@
 {% load static %}
-<div style="height: 30px; width: 100px;">
+<style>
+body {margin-bottom: 0px;margin-top: 4px; background-color: transparent;}
+#tipoForm {
+margin-block-end:0px;
+background-color: transparent;
+}
+#tipoForm select: {
+    border: none;
+}
+</style>
+<body>
+<div style="height: 80%; width: 100%;margin-block-end:0px;">
                <form method="post" id="tipoForm" data-sources-url="tabela/ajax/load-sources">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    {{ form }}
 <!--                   <input type="submit" value="Submit">-->
                 </form>
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
                 <script src="{% static 'js/form-control.js' %}">
                 </script>
  </div>
+</body>
