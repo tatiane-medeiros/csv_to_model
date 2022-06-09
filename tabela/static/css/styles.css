@@ -19,5 +19,8 @@ tr:nth-child(even) {
    width: 80% !important;
    overflow-x: scroll;
 }
-.switch {
+#id_tipofonte {
+    border: none;
+    height: -webkit-fill-available;
+    background-color: transparent;
 }
