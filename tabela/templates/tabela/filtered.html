@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<p>Tabela descrevendo os artigos</p>
+<div class="container">
+<div class="row mt-2">
+    <div class="col">
+        <form method="GET">
+            {{ filter.form.as_p }}
+            <input type="submit" class="btn btn-outline-success" />
+        </form>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-8">
+        <div class="table-responsive-sm">
+            <table class="table table-sm table-hover" width="100%">
+                <thead style="background-color: #ffffff">
+                {% for label in allFields %}
+                <th>{{ label.name }}</th>
+                {% endfor %}
+                </thead>
+
+                <tbody>
+                {% for item in filtered.object_list %}
+                <tr >
+                    {% for field in item.get_string_fields %}
+                    <td>{{ field }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

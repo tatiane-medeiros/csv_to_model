@@ -13,7 +13,15 @@
 <body>
 <p>Tabela descrevendo os artigos</p>
 <!--<li>Dataset.myid</li>-->
-<div class="row">
+<div class="row mt-2">
+    <div class="col">
+        <form method="GET">
+            {{ filter.form.as_p }}
+            <input type="submit" class="btn btn-outline-success" />
+        </form>
+    </div>
+</div>
+<div class="row mt-4">
     <div class="col-md-8">
         <div class="table-responsive-sm">
         <table class="table table-sm table-hover" width="100%">
@@ -41,7 +49,7 @@
                 <th> Saída </th>
             </thead>
             <tbody>
-            {% for item in dataset %}
+            {% for item in dataset. %}
             <tr>
                <td class="align-middle" style="height: 40px; max-height: 40px;">
 <!--                  <a href="http://127.0.0.1:8000/admin/tabela/dataset/{{item.id}}">p</a>-->
